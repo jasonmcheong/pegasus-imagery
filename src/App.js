@@ -8,16 +8,16 @@ import About from './components/About';
 import Careers from './components/Careers';
 
 class App extends Component {
-	render() {
-		return (
-			<div className="App">
-				<Services />
-				<Gallery />
-				<About />
-				<Careers />
-			</div>
-		);
-	}
+    render() {
+        return (
+            <div className='App'>
+                <Services />
+                <About />
+                <Careers />
+                <Gallery />
+            </div>
+        );
+    }
 }
 
 export default App;
