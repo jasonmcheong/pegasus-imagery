@@ -212,8 +212,7 @@ p {
         margin: 0 auto;
     }
     .about-btn {
-        width: 100%;
-        padding: 1.2em 0;
+        width: 30%;
     }
     /* SERVICES */
     #service-display {
@@ -249,9 +248,14 @@ p {
         padding: 1em 0;
     }
     /* ABOUT */
+    .about-btn {
+        width: 100%;
+        padding: 1.2em 0;
+    }
     .about-company-media {
         width: 100%;
     }
+
     /* SERVICES */
     .service-tabs div {
         padding: 30px;

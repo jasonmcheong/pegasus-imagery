@@ -14,7 +14,6 @@ class App extends Component {
                 <Services />
                 <About />
                 <Careers />
-                <Gallery />
             </div>
         );
     }
