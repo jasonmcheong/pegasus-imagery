@@ -1,3 +1,5 @@
+// TODO: Enable the form to send an email to admin's email address
+
 import React from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';

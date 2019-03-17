@@ -1,3 +1,5 @@
+// TODO: Find a different way to store images. Purchase ACF Pro ?
+
 import React from 'react';
 
 class Gallery extends React.Component {
