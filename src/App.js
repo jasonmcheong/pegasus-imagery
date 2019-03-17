@@ -6,11 +6,13 @@ import Services from './components/Services';
 import Gallery from './components/Gallery';
 import About from './components/About';
 import Careers from './components/Careers';
+import Contact from './components/Contact';
 
 class App extends Component {
     render() {
         return (
             <div className='App'>
+                <Contact />
                 <Services />
                 <About />
                 <Careers />
