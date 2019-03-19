@@ -1,41 +1,92 @@
-// TODO: Enable the form to send an email to admin's email address
+/*
+ *
+ * TODO: Change the receiving email address when ready for deployment
+ * TODO: Work on the mail headers in the mail.php
+ *
+ */
 
 import React from 'react';
-import { withFormik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+import ReactPhoneInput from 'react-phone-input-2';
+import axios from 'axios';
 
-const Contact = ({ errors, touched }) => (
-    <Form>
-        <div>
-            {touched.name && errors.name && <p>{errors.name}</p>}
-            <Field type='text' name='name' placeholder='Name' />
-        </div>
-        <div>
-            {touched.email && errors.email && <p>{errors.email}</p>}
-            <Field type='email' name='email' placeholder='Email' />
-        </div>
-        <button>Submit</button>
-    </Form>
-);
+class Contact extends React.Component {
+    constructor(props) {
+        super(props);
 
-const FormikContact = withFormik({
-    mapPropsToValues() {
-        return {
+        this.handleOnChange = this.handleOnChange.bind(this);
+        this.handleFormReset = this.handleFormReset.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+
+        this.state = {
             name: '',
+            company: '',
             email: '',
+            phone: '',
+            message: '',
+            mailSent: false,
+            error: null,
         };
-    },
-    validationSchema: Yup.object().shape({
-        name: Yup.string()
-            .min(2)
-            .required('You must provide a name'),
-        email: Yup.string()
-            .email('Please enter a valid email address')
-            .required('Please enter your email address'),
-    }),
-    handleSubmit(values) {
-        console.log(values);
-    },
-})(Contact);
+    }
 
-export default FormikContact;
+    handleOnChange(value) {
+        this.setState({
+            phone: value,
+        });
+    }
+
+    handleFormReset() {
+        this.setState({
+            name: '',
+            company: '',
+            email: '',
+            phone: '',
+            message: '',
+            mailSent: false,
+            error: null,
+        });
+    }
+
+    handleFormSubmit(evt) {
+        evt.preventDefault();
+        axios({
+            method: 'post',
+            url: '/mail.php',
+            headers: { 'content-type': 'application/json' },
+            data: this.state,
+        })
+            .then(result => {
+                this.setState({
+                    mailSent: result.data.sent,
+                });
+            })
+            .then(this.handleFormReset())
+            .catch(error => {
+                if (error.response) {
+                    this.setState({ error: error.message });
+                }
+            });
+    }
+
+    render() {
+        return (
+            <form action='#' onSubmit={e => this.handleFormSubmit(e)}>
+                <input type='text' id='name' name='name' placeholder='Full Name' onChange={e => this.setState({ name: e.target.value })} value={this.state.name} required />
+                <input type='text' id='company' name='company' placeholder='Company' onChange={e => this.setState({ company: e.target.value })} value={this.state.company} />
+                <input type='email' id='email' name='email' placeholder='Email' onChange={e => this.setState({ email: e.target.value })} value={this.state.email} required />
+                <ReactPhoneInput inputStyle={{ width: '100%' }} defaultCountry={'ca'} onChange={e => this.handleOnChange(e)} value={this.state.phone} />
+                <textarea
+                    id='message'
+                    name='message'
+                    placeholder='Write your message'
+                    onChange={e => this.setState({ message: e.target.value })}
+                    value={this.state.message}
+                    required
+                />
+                <div>{this.state.mailSent ? <div>Thank you for contcting us.</div> : ''}</div>
+                <input type='submit' value='Submit' />
+            </form>
+        );
+    }
+}
+
+export default Contact;
