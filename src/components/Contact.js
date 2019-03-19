@@ -18,6 +18,7 @@ class Contact extends React.Component {
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
         this.state = {
+            inquiry: 'General',
             name: '',
             company: '',
             email: '',
@@ -36,6 +37,7 @@ class Contact extends React.Component {
 
     handleFormReset() {
         this.setState({
+            inquiry: 'General',
             name: '',
             company: '',
             email: '',
@@ -70,10 +72,24 @@ class Contact extends React.Component {
     render() {
         return (
             <form action='#' onSubmit={e => this.handleFormSubmit(e)}>
+                <label>
+                    Inquiry Type:
+                    <select id='inquiry' name='inquiry' onChange={e => this.setState({ inquiry: e.target.value })} value={this.state.inquiry}>
+                        <option value='General'>General</option>
+                        <option value='Invest'>Invest</option>
+                        <option value='Services'>Services</option>
+                    </select>
+                </label>
                 <input type='text' id='name' name='name' placeholder='Full Name' onChange={e => this.setState({ name: e.target.value })} value={this.state.name} required />
                 <input type='text' id='company' name='company' placeholder='Company' onChange={e => this.setState({ company: e.target.value })} value={this.state.company} />
                 <input type='email' id='email' name='email' placeholder='Email' onChange={e => this.setState({ email: e.target.value })} value={this.state.email} required />
-                <ReactPhoneInput inputStyle={{ width: '100%' }} defaultCountry={'ca'} onChange={e => this.handleOnChange(e)} value={this.state.phone} />
+                <ReactPhoneInput
+                    inputExtraProps={{ name: 'phone', id: 'phone' }}
+                    inputStyle={{ width: '100%' }}
+                    defaultCountry={'ca'}
+                    onChange={e => this.handleOnChange(e)}
+                    value={this.state.phone}
+                />
                 <textarea
                     id='message'
                     name='message'
