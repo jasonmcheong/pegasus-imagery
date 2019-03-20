@@ -1,6 +1,7 @@
 /*
  *
- * TODO: Change the receiving email address when ready for deployment
+ *  TODO: Change the receiving email address when ready for deployment
+ *  TODO: Add reCaptcha to the form for added verification security
  *
  */
 
@@ -71,62 +72,83 @@ class Contact extends React.Component {
     render() {
         return (
             <form action='#' onSubmit={e => this.handleFormSubmit(e)}>
-                <label>
-                    Inquiry Type:
-                    <select
-                        id='inquiry'
-                        name='inquiry'
-                        onChange={e => this.setState({ inquiry: e.target.value })}
-                        value={this.state.inquiry}
-                    >
-                        <option value='General'>General</option>
-                        <option value='Invest'>Invest</option>
-                        <option value='Services'>Services</option>
-                    </select>
-                </label>
-                <input
-                    type='text'
-                    id='name'
-                    name='name'
-                    placeholder='Full Name'
-                    onChange={e => this.setState({ name: e.target.value })}
-                    value={this.state.name}
-                    required
-                />
-                <input
-                    type='text'
-                    id='company'
-                    name='company'
-                    placeholder='Company'
-                    onChange={e => this.setState({ company: e.target.value })}
-                    value={this.state.company}
-                />
-                <input
-                    type='email'
-                    id='email'
-                    name='email'
-                    placeholder='Email'
-                    onChange={e => this.setState({ email: e.target.value })}
-                    value={this.state.email}
-                    required
-                />
-                <ReactPhoneInput
-                    inputExtraProps={{ name: 'phone', id: 'phone' }}
-                    inputStyle={{ width: '100%' }}
-                    defaultCountry={'ca'}
-                    onChange={e => this.handleOnChange(e)}
-                    value={this.state.phone}
-                />
-                <textarea
-                    id='message'
-                    name='message'
-                    placeholder='Write your message'
-                    onChange={e => this.setState({ message: e.target.value })}
-                    value={this.state.message}
-                    required
-                />
-                <div>{this.state.mailSent ? <div>Thank you for contcting us.</div> : ''}</div>
-                <input type='submit' value='Submit' />
+                <div className='form-container'>
+                    <div className='form-group'>
+                        <label>Inquiry Type</label>
+                        <select
+                            id='inquiry'
+                            name='inquiry'
+                            onChange={e => this.setState({ inquiry: e.target.value })}
+                            value={this.state.inquiry}
+                        >
+                            <option value='General'>General</option>
+                            <option value='Invest'>Invest</option>
+                            <option value='Services'>Services</option>
+                        </select>
+                    </div>
+                    <div className='form-group'>
+                        <label>Full Name</label>
+                        <input
+                            type='text'
+                            id='name'
+                            name='name'
+                            placeholder='Full Name'
+                            onChange={e => this.setState({ name: e.target.value })}
+                            value={this.state.name}
+                            required
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label>Company</label>
+                        <input
+                            type='text'
+                            id='company'
+                            name='company'
+                            placeholder='Company'
+                            onChange={e => this.setState({ company: e.target.value })}
+                            value={this.state.company}
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label>Email</label>
+                        <input
+                            type='email'
+                            id='email'
+                            name='email'
+                            placeholder='Email'
+                            onChange={e => this.setState({ email: e.target.value })}
+                            value={this.state.email}
+                            required
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label>Phone</label>
+                        <ReactPhoneInput
+                            inputExtraProps={{ name: 'phone', id: 'phone' }}
+                            containerStyle={{ flex: 2 }}
+                            inputStyle={{ width: '100%' }}
+                            defaultCountry={'ca'}
+                            onChange={e => this.handleOnChange(e)}
+                            value={this.state.phone}
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <label>Message</label>
+                        <textarea
+                            id='message'
+                            name='message'
+                            rows='10'
+                            placeholder='Write your message'
+                            onChange={e => this.setState({ message: e.target.value })}
+                            value={this.state.message}
+                            required
+                        />
+                    </div>
+                    <div>{this.state.mailSent ? <div>Thank you for contcting us.</div> : ''}</div>
+                    <div className='submit-container'>
+                        <input type='submit' value='Submit' />
+                    </div>
+                </div>
             </form>
         );
     }

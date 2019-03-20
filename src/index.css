@@ -14,6 +14,7 @@ code {
 
 * {
     box-sizing: border-box;
+    text-align: left;
 }
 
 h1,
@@ -36,7 +37,6 @@ p {
     padding: 40px 0;
 }
 .header-inner {
-    text-align: left;
     width: 500px;
     margin: 0 auto;
 }
@@ -51,7 +51,6 @@ p {
     max-width: 1800px;
     width: 95%;
     margin: 0 auto;
-    text-align: left;
 }
 .career-section h3 {
     font-size: 36px;
@@ -98,7 +97,6 @@ p {
     max-width: 1800px;
     width: 95%;
     margin: 0 auto;
-    text-align: left;
 }
 .about-company-flex {
     display: flex;
@@ -146,6 +144,9 @@ p {
     width: 33.4%;
     padding: 30px 0;
 }
+.service-tabs * {
+    text-align: center;
+}
 .service-tabs div:hover {
     cursor: pointer;
     background: #679cd3;
@@ -160,13 +161,11 @@ p {
 }
 #service-display div:nth-child(1) {
     width: 45%;
-    text-align: left;
     padding: 150px 100px;
 }
 .services-capabilities {
     display: flex;
     justify-content: center;
-    text-align: left;
 }
 .services-infographic {
     margin-bottom: 30px;
@@ -185,27 +184,50 @@ p {
 *   To modify the React phone number component styles, do it within the component itself
 */
 form {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     width: 700px;
     margin: 0 auto;
+    padding: 10px;
 }
-input[type='text'],
-input[type='email'],
-select,
-textarea {
+.form-container {
+    background: #fff;
+    -webkit-box-shadow: 1px 5px 50px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 1px 5px 50px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 5px 50px 2px rgba(0, 0, 0, 0.5);
+    padding: 25px 40px 40px 25px;
+}
+.form-group {
+    display: flex;
+    margin-bottom: 1.6rem;
+}
+.form-group label {
+    flex: 1;
+}
+.form-group select,
+.form-group input,
+.form-group textarea {
+    flex: 2;
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: none;
+    padding: 10px;
+    background-color: #f2f5f7;
+    border-radius: 3px;
+    border: none;
+    resize: vertical;
+}
+.submit-container {
+    display: flex;
+    justify-content: flex-end;
 }
 input[type='submit'] {
-    background-color: #4caf50;
+    text-align: center;
+    width: 120px;
+    font-size: 1.375rem;
+    background-color: #303030;
     color: white;
-    padding: 12px 20px;
+    padding: 10px 14px;
     border: none;
-    border-radius: 4px;
+    border-radius: 3px;
     cursor: pointer;
 }
 
@@ -259,14 +281,18 @@ input[type='submit'] {
         flex-direction: column;
         align-items: center;
     }
+    /* CONTACT */
+    form {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 550px) {
     .header-inner {
-        text-align: left;
         width: 90%;
         margin: 0 auto;
     }
+
     /* CAREER */
     .career {
         grid-template-columns: 1fr;
@@ -283,7 +309,6 @@ input[type='submit'] {
     .about-company-media {
         width: 100%;
     }
-
     /* SERVICES */
     .service-tabs div {
         padding: 30px;
@@ -304,5 +329,31 @@ input[type='submit'] {
     }
     .services-capabilities div p {
         padding: 5px;
+    }
+    /* CONTACT */
+
+    .form-container {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        padding: 0;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.6rem;
+    }
+    .form-group label {
+        margin-bottom: 0.6rem;
+    }
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        background-color: #f2f5f7;
+        border-radius: 3px;
+        border: none;
+        resize: vertical;
     }
 }

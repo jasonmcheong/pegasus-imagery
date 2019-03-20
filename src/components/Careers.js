@@ -1,3 +1,9 @@
+/*
+ *
+ *   TODO: Link clickable button to full job description
+ *
+ */
+
 import React from 'react';
 
 class Careers extends React.Component {
