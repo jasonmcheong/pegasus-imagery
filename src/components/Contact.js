@@ -126,8 +126,8 @@ class Contact extends React.Component {
                         <label>Phone</label>
                         <ReactPhoneInput
                             inputExtraProps={{ name: 'phone', id: 'phone' }}
-                            containerStyle={{ flex: 2 }}
-                            inputStyle={{ width: '100%' }}
+                            containerStyle={{ flex: 2, paddingRight: '15px' }}
+                            inputStyle={{ width: '104%', backgroundColor: '#f2f5f7', border: 'none' }}
                             defaultCountry={'ca'}
                             onChange={e => this.handleOnChange(e)}
                             value={this.state.phone}

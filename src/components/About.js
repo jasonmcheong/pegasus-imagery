@@ -41,14 +41,20 @@ const About = props => {
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <h2>{about.acf.about_aircraft_title}</h2>
-                                <div
-                                    dangerouslySetInnerHTML={{
-                                        __html: about.acf.about_aircraft_description,
-                                    }}
+                            <div className='about-aircraft-section'>
+                                <div className='about-aircraft-carousel'>
+                                    <img src={about.acf.about_aircraft_icon.url} width='150px' height='150px' />
+                                    <h2>{about.acf.about_aircraft_title}</h2>
+                                    <div
+                                        dangerouslySetInnerHTML={{
+                                            __html: about.acf.about_aircraft_description,
+                                        }}
+                                    />
+                                </div>
+                                <img
+                                    className='about-aircraft-interactive'
+                                    src={about.acf.about_aircraft_image.sizes.large}
                                 />
-                                <img src={about.acf.about_aircraft_image.sizes.large} />
                             </div>
                         </div>
                     );

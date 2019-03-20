@@ -157,6 +157,15 @@ nav {
 .about-company-video > iframe {
     width: 100%;
 }
+.about-aircraft-section {
+    display: flex;
+}
+.about-aircraft-carousel {
+    width: 40vw;
+}
+.about-aircraft-interactive {
+    width: 60vw;
+}
 
 /* 
 *   SERVICE PAGE STYLES
@@ -274,6 +283,24 @@ input[type='submit'] {
 }
 
 @media only screen and (max-width: 1280px) {
+    .nav {
+        display: none;
+    }
+    /* ABOUT */
+    .about-aircraft-section {
+        flex-direction: column;
+    }
+    .about-aircraft-carousel,
+    .about-aircraft-interactive {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .about-aircraft-carousel {
+        padding: 10px 20px;
+    }
+    .about-aircraft-carousel * {
+        text-align: center;
+    }
     /* CAREER */
     .career {
         grid-template-columns: repeat(3, 1fr);
@@ -337,7 +364,6 @@ input[type='submit'] {
         width: 90%;
         margin: 0 auto;
     }
-
     /* CAREER */
     .career {
         grid-template-columns: 1fr;
@@ -345,6 +371,7 @@ input[type='submit'] {
     .career-btn {
         width: 100%;
         padding: 1em 0;
+        text-align: center;
     }
     /* ABOUT */
     .about-btn {
@@ -376,7 +403,6 @@ input[type='submit'] {
         padding: 5px;
     }
     /* CONTACT */
-
     .form-container {
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
