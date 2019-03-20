@@ -10,7 +10,7 @@ const About = props => {
                         <div>
                             <div className='header'>
                                 <div className='header-inner'>
-                                    <h2>{about.acf.heading}</h2>
+                                    <h1>{about.acf.heading}</h1>
                                     <div dangerouslySetInnerHTML={{ __html: about.acf.heading_description }} />
                                 </div>
                             </div>

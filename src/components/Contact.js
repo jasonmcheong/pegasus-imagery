@@ -72,6 +72,7 @@ class Contact extends React.Component {
     render() {
         return (
             <form action='#' onSubmit={e => this.handleFormSubmit(e)}>
+                <h1 className='contact-title'>Contact Us</h1>
                 <div className='form-container'>
                     <div className='form-group'>
                         <label>Inquiry Type</label>

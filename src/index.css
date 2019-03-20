@@ -29,6 +29,33 @@ p {
 }
 
 /* 
+*   LOGO STYLES
+*/
+.logo {
+    width: 150px;
+}
+
+/* 
+*   NAVIGATION STYLES
+*/
+nav {
+    background-color: #232323;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    justify-content: space-around;
+}
+.nav-items li {
+    display: inline;
+    margin-right: 60px;
+}
+.nav-items li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* 
 *   HEADER STYLES
 */
 .header {
@@ -183,6 +210,21 @@ p {
 *   CONTACT PAGE STYLES
 *   To modify the React phone number component styles, do it within the component itself
 */
+.contact-title {
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    margin: 3rem 0 2.2rem 0;
+    padding-bottom: 0.5rem;
+}
+.contact-title::before {
+    content: '';
+    position: absolute;
+    width: 25%;
+    height: 1px;
+    bottom: 0;
+    border-bottom: 2px solid #679cd3;
+}
 form {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
@@ -282,6 +324,9 @@ input[type='submit'] {
         align-items: center;
     }
     /* CONTACT */
+    .contact-title {
+        margin-left: 0.5rem;
+    }
     form {
         width: 100%;
     }

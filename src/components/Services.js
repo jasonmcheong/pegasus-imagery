@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Services extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     handleClick(evt) {
         document.getElementById('service-display').innerHTML = `
             <div>
@@ -24,7 +20,7 @@ class Services extends React.Component {
                             <div>
                                 <div className='header'>
                                     <div className='header-inner'>
-                                        <h2>{services.acf.heading}</h2>
+                                        <h1>{services.acf.heading}</h1>
                                         <div dangerouslySetInnerHTML={{ __html: services.acf.heading_description }} />
                                     </div>
                                 </div>

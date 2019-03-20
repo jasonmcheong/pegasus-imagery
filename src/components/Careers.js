@@ -7,10 +7,6 @@
 import React from 'react';
 
 class Careers extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     handleClick(evt) {
         console.log(evt.source_url);
     }
@@ -23,7 +19,7 @@ class Careers extends React.Component {
                         return (
                             <div className='header'>
                                 <div className='header-inner'>
-                                    <h2>{page.acf.heading}</h2>
+                                    <h1>{page.acf.heading}</h1>
                                     <div dangerouslySetInnerHTML={{ __html: page.acf.heading_description }} />
                                 </div>
                             </div>
