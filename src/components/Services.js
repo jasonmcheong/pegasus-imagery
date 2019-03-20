@@ -3,10 +3,6 @@ import React from 'react';
 class Services extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            data: [],
-        };
     }
 
     handleClick(evt) {
@@ -19,15 +15,10 @@ class Services extends React.Component {
         `;
     }
 
-    componentWillMount() {
-        fetch('http://pegasus.web.dmitcapstone.ca/wordpress/wp-json/wp/v2/pages')
-            .then(res => res.json())
-            .then(data => this.setState({ data: data }));
-    }
     render() {
         return (
             <div>
-                {this.state.data.map(services => {
+                {this.props.pages.map(services => {
                     if (services.title.rendered === 'Services') {
                         return (
                             <div>
@@ -41,34 +32,61 @@ class Services extends React.Component {
                                     <div
                                         onClick={evt =>
                                             this.handleClick(
-                                                { title: services.acf.service_1_title, desc: services.acf.service_1_description, video: services.acf.service_1_video_link },
+                                                {
+                                                    title: services.acf.service_1_title,
+                                                    desc: services.acf.service_1_description,
+                                                    video: services.acf.service_1_video_link,
+                                                },
                                                 evt
                                             )
                                         }
                                     >
-                                        <img src={services.acf.service_1_icon.url} alt='icon' width='25px' height='25px' />
+                                        <img
+                                            src={services.acf.service_1_icon.url}
+                                            alt='icon'
+                                            width='25px'
+                                            height='25px'
+                                        />
                                         <h2>{services.acf.service_1_title}</h2>
                                     </div>
                                     <div
                                         onClick={evt =>
                                             this.handleClick(
-                                                { title: services.acf.service_2_title, desc: services.acf.service_2_description, video: services.acf.service_2_video_link },
+                                                {
+                                                    title: services.acf.service_2_title,
+                                                    desc: services.acf.service_2_description,
+                                                    video: services.acf.service_2_video_link,
+                                                },
                                                 evt
                                             )
                                         }
                                     >
-                                        <img src={services.acf.service_2_icon.url} alt='icon' width='25px' height='25px' />
+                                        <img
+                                            src={services.acf.service_2_icon.url}
+                                            alt='icon'
+                                            width='25px'
+                                            height='25px'
+                                        />
                                         <h2>{services.acf.service_2_title}</h2>
                                     </div>
                                     <div
                                         onClick={evt =>
                                             this.handleClick(
-                                                { title: services.acf.service_3_title, desc: services.acf.service_3_description, video: services.acf.service_3_video_link },
+                                                {
+                                                    title: services.acf.service_3_title,
+                                                    desc: services.acf.service_3_description,
+                                                    video: services.acf.service_3_video_link,
+                                                },
                                                 evt
                                             )
                                         }
                                     >
-                                        <img src={services.acf.service_3_icon.url} alt='icon' width='25px' height='25px' />
+                                        <img
+                                            src={services.acf.service_3_icon.url}
+                                            alt='icon'
+                                            width='25px'
+                                            height='25px'
+                                        />
                                         <h2>{services.acf.service_3_title}</h2>
                                     </div>
                                 </div>

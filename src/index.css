@@ -185,7 +185,7 @@ p {
 *   To modify the React phone number component styles, do it within the component itself
 */
 form {
-    width: 30%;
+    width: 700px;
     margin: 0 auto;
 }
 input[type='text'],

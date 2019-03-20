@@ -1,7 +1,6 @@
 /*
  *
  * TODO: Change the receiving email address when ready for deployment
- * TODO: Work on the mail headers in the mail.php
  *
  */
 
@@ -74,15 +73,43 @@ class Contact extends React.Component {
             <form action='#' onSubmit={e => this.handleFormSubmit(e)}>
                 <label>
                     Inquiry Type:
-                    <select id='inquiry' name='inquiry' onChange={e => this.setState({ inquiry: e.target.value })} value={this.state.inquiry}>
+                    <select
+                        id='inquiry'
+                        name='inquiry'
+                        onChange={e => this.setState({ inquiry: e.target.value })}
+                        value={this.state.inquiry}
+                    >
                         <option value='General'>General</option>
                         <option value='Invest'>Invest</option>
                         <option value='Services'>Services</option>
                     </select>
                 </label>
-                <input type='text' id='name' name='name' placeholder='Full Name' onChange={e => this.setState({ name: e.target.value })} value={this.state.name} required />
-                <input type='text' id='company' name='company' placeholder='Company' onChange={e => this.setState({ company: e.target.value })} value={this.state.company} />
-                <input type='email' id='email' name='email' placeholder='Email' onChange={e => this.setState({ email: e.target.value })} value={this.state.email} required />
+                <input
+                    type='text'
+                    id='name'
+                    name='name'
+                    placeholder='Full Name'
+                    onChange={e => this.setState({ name: e.target.value })}
+                    value={this.state.name}
+                    required
+                />
+                <input
+                    type='text'
+                    id='company'
+                    name='company'
+                    placeholder='Company'
+                    onChange={e => this.setState({ company: e.target.value })}
+                    value={this.state.company}
+                />
+                <input
+                    type='email'
+                    id='email'
+                    name='email'
+                    placeholder='Email'
+                    onChange={e => this.setState({ email: e.target.value })}
+                    value={this.state.email}
+                    required
+                />
                 <ReactPhoneInput
                     inputExtraProps={{ name: 'phone', id: 'phone' }}
                     inputStyle={{ width: '100%' }}
