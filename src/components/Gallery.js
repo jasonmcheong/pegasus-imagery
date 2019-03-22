@@ -8,10 +8,6 @@
 import React from 'react';
 
 class Gallery extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     handleClick(evt) {
         console.log(evt.source_url);
     }
