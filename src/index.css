@@ -36,14 +36,20 @@ a {
 *   LOGO STYLES
 */
 .logo {
-    width: 150px;
+    width: 125px;
 }
-
+.bar {
+    display: none;
+}
 /* 
 *   NAVIGATION STYLES
 */
 nav {
     background-color: #232323;
+}
+.nav {
+    max-width: 1800px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     padding: 20px 0;
@@ -87,6 +93,7 @@ nav {
     max-width: 1800px;
     width: 95%;
     margin: 0 auto;
+    margin-bottom: 3rem;
 }
 .career-section h3 {
     font-size: 36px;
@@ -293,6 +300,7 @@ form {
     width: 700px;
     margin: 0 auto;
     padding: 10px;
+    margin-bottom: 4rem;
 }
 .form-container {
     background: #fff;
@@ -341,7 +349,7 @@ input[type='submit'] {
 footer {
     color: #fff;
     background-color: #232323;
-    padding: 50px 0;
+    padding: 50px 0 20px 0;
 }
 .footer {
     max-width: 1800px;
@@ -377,8 +385,13 @@ footer {
 .footer-grid div {
     padding: 10px 30px;
 }
+.footer-grid .footer-excerpt-1 h4 {
+    margin-bottom: 1rem;
+}
 .footer-grid .footer-excerpt-2 {
     padding-top: 20px;
+    border-left: 2px #fff dotted;
+    border-right: 2px #fff dotted;
 }
 .footer-social {
     display: flex;
@@ -386,7 +399,8 @@ footer {
     align-items: center;
 }
 .footer-social .social-media-icons {
-    width: 90%;
+    width: 375px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
 }
@@ -406,11 +420,14 @@ footer {
     color: #4267b2;
     transition: color 0.6s;
 }
+.footer .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 2rem;
+}
 
 @media only screen and (max-width: 1280px) {
-    .nav {
-        display: none;
-    }
     /* ABOUT */
     .about-company-section,
     .about-aircraft-section {
@@ -427,7 +444,6 @@ footer {
     .about-aircraft-carousel {
         padding: 10px 20px;
     }
-
     /* CAREER */
     .career {
         grid-template-columns: repeat(3, 1fr);
@@ -437,9 +453,75 @@ footer {
     #service-display div:nth-child(1) {
         padding: 150px 50px;
     }
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-grid .footer-excerpt-2 {
+        border-right: none;
+    }
+    .footer-grid .footer-social {
+        margin-top: 1.2rem;
+        grid-column-start: 1;
+        grid-column-end: -1;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
+    /* NAVIGATION */
+    .bar {
+        display: block;
+        font-size: 2.6rem;
+        color: #fff;
+        margin-top: 10px;
+    }
+    .bar:hover {
+        cursor: pointer;
+    }
+    .logo-container {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .main-nav {
+        height: 100vh;
+    }
+    .main-nav.hide {
+        height: initial;
+    }
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 0;
+    }
+    .nav-items {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+    .nav-items.hide {
+        display: none;
+    }
+    .nav-items li {
+        width: 100%;
+        margin: 0;
+        margin: 40px;
+        text-align: center;
+    }
+    .nav-items li a {
+        padding: 20px 150px;
+    }
+    .nav-items li .active {
+        border: none;
+        background: #303030;
+        color: #679cd3;
+        transition: all 0.5s;
+    }
     /* CAREER */
     .career {
         grid-template-columns: repeat(2, 1fr);
@@ -489,6 +571,11 @@ footer {
     }
     form {
         width: 100%;
+        margin-bottom: 3rem;
+    }
+    /* FOOTER */
+    .footer-grid div {
+        padding: 10px 20px;
     }
 }
 
@@ -531,6 +618,9 @@ footer {
         padding: 5px;
     }
     /* CONTACT */
+    form {
+        margin-bottom: 1.5rem;
+    }
     .form-container {
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
@@ -554,5 +644,17 @@ footer {
         border-radius: 3px;
         border: none;
         resize: vertical;
+    }
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid .footer-excerpt-2 {
+        border-left: none;
+    }
+    .footer-social .social-media-icons {
+        width: 85%;
+        margin: 0 auto;
+        justify-content: space-evenly;
     }
 }

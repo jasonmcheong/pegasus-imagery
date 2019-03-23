@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
+import Home from './components/Home';
 import Services from './components/Services';
 import Gallery from './components/Gallery';
 import About from './components/About';
@@ -16,9 +17,10 @@ import CareerDetail from './components/CareerDetail';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
-library.add(fab);
+library.add(fab, faBars);
 
 class App extends Component {
     constructor(props) {
@@ -29,6 +31,7 @@ class App extends Component {
             pages: [],
             career: [],
             categories: [],
+            logo: [],
             isLoading: false,
         };
     }
@@ -41,6 +44,7 @@ class App extends Component {
             fetch('http://pegasus.web.dmitcapstone.ca/wordpress/wp-json/wp/v2/pages').then(res => res.json()),
             fetch('http://pegasus.web.dmitcapstone.ca/wordpress/wp-json/wp/v2/career').then(res => res.json()),
             fetch('http://pegasus.web.dmitcapstone.ca/wordpress/wp-json/wp/v2/categories').then(res => res.json()),
+            fetch('http://pegasus.web.dmitcapstone.ca/wordpress/wp-json/logo/v1').then(res => res.json()),
         ])
             .then(value => {
                 this.setState({
@@ -48,6 +52,7 @@ class App extends Component {
                     pages: value[1],
                     careers: value[2],
                     categories: value[3],
+                    logo: value[4],
                     isLoading: false,
                 });
             })
@@ -61,10 +66,10 @@ class App extends Component {
         } else {
             return (
                 <div className='App'>
-                    <Header />
+                    <Header logo={this.state.logo} />
                     <Switch>
                         {/* Should be home component for the first route once it gets finished */}
-                        <Route exact path='/' component={Contact} />
+                        <Route exact path='/' component={Home} />
                         <Route exact path='/about' render={props => <About {...props} pages={this.state.pages} />} />
                         <Route
                             exact
