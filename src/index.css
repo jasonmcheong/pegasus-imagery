@@ -28,6 +28,13 @@ p {
     padding: 0;
 }
 
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+
 /* 
 *   LOGO STYLES
 */
@@ -53,7 +60,6 @@ nav {
     color: #fff;
     padding-bottom: 7px;
     font-weight: bold;
-    text-decoration: none;
     text-transform: uppercase;
 }
 .nav-items li .active {
@@ -108,6 +114,16 @@ nav {
 .job-desc {
     margin-bottom: 30px;
 }
+.full-job {
+    width: 80%;
+    margin: 0 auto;
+}
+.full-job li {
+    margin-top: 20px;
+}
+.full-job h2 {
+    margin-top: 3rem;
+}
 .career-btn {
     background-color: #232323;
     color: #fff;
@@ -152,7 +168,6 @@ nav {
     padding: 12px 25px 12px 25px;
     text-align: center;
     color: white;
-    text-decoration: none;
     float: right;
 }
 .about-company-media {

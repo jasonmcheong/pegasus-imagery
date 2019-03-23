@@ -17,7 +17,7 @@ class Gallery extends React.Component {
             <div>
                 <h1>Gallery</h1>
                 {this.props.media.map(media => {
-                    return <img src={media.media_details.sizes.thumbnail.source_url} alt='image' />;
+                    return <img src={media.media_details.sizes.thumbnail.source_url} alt='' />;
                 })}
             </div>
         );

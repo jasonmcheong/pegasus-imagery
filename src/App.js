@@ -12,6 +12,7 @@ import Services from './components/Services';
 import Gallery from './components/Gallery';
 import About from './components/About';
 import Careers from './components/Careers';
+import CareerDetail from './components/CareerDetail';
 import Contact from './components/Contact';
 
 class App extends Component {
@@ -61,6 +62,11 @@ class App extends Component {
                         <Route exact path='/' component={Contact} />
                         <Route path='/about' render={props => <About {...props} pages={this.state.pages} />} />
                         <Route path='/services' render={props => <Services {...props} pages={this.state.pages} />} />
+                        <Route
+                            exact
+                            path='/careers/:careerId'
+                            render={props => <CareerDetail {...props} careers={this.state.careers} />}
+                        />
                         <Route
                             path='/careers'
                             render={props => (

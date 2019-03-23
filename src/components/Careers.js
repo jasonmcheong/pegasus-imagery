@@ -5,8 +5,13 @@
  */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Careers extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log(props);
+    }
     handleClick(evt) {
         console.log(evt.source_url);
     }
@@ -39,9 +44,14 @@ class Careers extends React.Component {
                                                 <h4>{career.title.rendered}</h4>
                                                 <div
                                                     className='job-desc'
-                                                    dangerouslySetInnerHTML={{ __html: career.excerpt.rendered }}
+                                                    dangerouslySetInnerHTML={{ __html: career.acf.short_description }}
                                                 />
-                                                <button className='career-btn'>Apply</button>
+                                                <Link
+                                                    to={`${this.props.match.url}/${career.id}`}
+                                                    className='career-btn'
+                                                >
+                                                    Apply
+                                                </Link>
                                             </div>
                                         );
                                 })}
