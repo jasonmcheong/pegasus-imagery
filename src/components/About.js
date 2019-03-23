@@ -23,9 +23,9 @@ const About = props => {
                                                 __html: about.acf.about_company_description,
                                             }}
                                         />
-                                        <button className='about-btn'>
-                                            <Link to='/services'>Our Services</Link>
-                                        </button>
+                                        <Link className='about-btn' to='/services'>
+                                            Our Services
+                                        </Link>
                                     </div>
                                     <div className='about-company-media'>
                                         <img

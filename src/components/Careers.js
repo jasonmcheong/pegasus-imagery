@@ -1,9 +1,3 @@
-/*
- *
- *   TODO: Link clickable button to full job description
- *
- */
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -46,12 +40,14 @@ class Careers extends React.Component {
                                                     className='job-desc'
                                                     dangerouslySetInnerHTML={{ __html: career.acf.short_description }}
                                                 />
-                                                <Link
-                                                    to={`${this.props.match.url}/${career.id}`}
-                                                    className='career-btn'
-                                                >
-                                                    Apply
-                                                </Link>
+                                                <div className='btn-flex'>
+                                                    <Link
+                                                        to={`${this.props.match.url}/${career.id}`}
+                                                        className='career-btn'
+                                                    >
+                                                        Apply
+                                                    </Link>
+                                                </div>
                                             </div>
                                         );
                                 })}

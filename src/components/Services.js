@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollToTop from '../helper/ScrollToTop';
 
 class Services extends React.Component {
     handleClick(evt) {
@@ -14,6 +15,7 @@ class Services extends React.Component {
     render() {
         return (
             <div>
+                <ScrollToTop />
                 {this.props.pages.map(services => {
                     if (services.title.rendered === 'Services') {
                         return (

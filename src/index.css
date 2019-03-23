@@ -135,25 +135,32 @@ nav {
 .full-job h2 {
     margin: 2rem 0 1.5rem 0;
 }
+.btn-flex {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
 .career-btn {
     background-color: #232323;
     color: #fff;
     border: none;
     padding: 0.5em 1.5em;
     border-radius: 3px;
-    float: right;
     cursor: pointer;
 }
 .career-btn:hover,
-.back-btn:hover {
+.back-btn:hover,
+.about-btn:hover,
+input[type='submit']:hover {
     background-color: #3c3c3c;
-    text-decoration: underline;
+    transition: all 0.4s;
 }
 
 /* 
 *   ABOUT PAGE STYLES
 */
-.about-company-section {
+.about-company-section,
+.about-aircraft-section {
     max-width: 1800px;
     width: 95%;
     margin: 0 auto;
@@ -174,14 +181,15 @@ nav {
     padding-left: 20px;
 }
 .about-btn {
-    background: #679cd3;
-    border: none;
-    margin-top: 15px;
-    padding: 12px 25px 12px 25px;
+    color: #fff;
+    background-color: #232323;
+    margin-top: 25px;
     text-align: center;
-    color: white;
-    text-decoration: none;
     float: right;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 3px;
+    cursor: pointer;
 }
 .about-company-media {
     width: 500px;
@@ -191,13 +199,25 @@ nav {
     width: 100%;
 }
 .about-aircraft-section {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .about-aircraft-carousel {
-    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.about-aircraft-carousel h2 {
+    margin: 1.2rem 0;
+}
+.about-aircraft-carousel div {
+    text-align: center;
+    width: 90%;
+    margin-bottom: 2rem;
 }
 .about-aircraft-interactive {
-    width: 60vw;
+    width: 100%;
 }
 
 /* 
@@ -321,8 +341,12 @@ input[type='submit'] {
         display: none;
     }
     /* ABOUT */
+    .about-company-section,
     .about-aircraft-section {
-        flex-direction: column;
+        width: 100%;
+    }
+    .about-aircraft-section {
+        grid-template-columns: 1fr;
     }
     .about-aircraft-carousel,
     .about-aircraft-interactive {
@@ -332,9 +356,7 @@ input[type='submit'] {
     .about-aircraft-carousel {
         padding: 10px 20px;
     }
-    .about-aircraft-carousel * {
-        text-align: center;
-    }
+
     /* CAREER */
     .career {
         grid-template-columns: repeat(3, 1fr);
@@ -352,12 +374,18 @@ input[type='submit'] {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 40px;
     }
+    .career-btn {
+        width: 100%;
+        padding: 1em 0;
+        text-align: center;
+    }
     /* ABOUT */
     .about-company-flex {
         flex-direction: column;
     }
     .about-company-info {
-        width: 100%;
+        width: 95%;
+        margin: 0 auto;
         padding: 0;
         margin-bottom: 20px;
     }
@@ -401,11 +429,6 @@ input[type='submit'] {
     /* CAREER */
     .career {
         grid-template-columns: 1fr;
-    }
-    .career-btn {
-        width: 100%;
-        padding: 1em 0;
-        text-align: center;
     }
     /* ABOUT */
     .about-btn {
