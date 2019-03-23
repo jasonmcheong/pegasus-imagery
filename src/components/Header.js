@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../logo.png';
 
-const Header = props => {
+const Header = () => {
     return (
         <nav className='nav'>
             <Link to='/'>

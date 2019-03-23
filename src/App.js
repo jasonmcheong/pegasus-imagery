@@ -14,6 +14,11 @@ import About from './components/About';
 import Careers from './components/Careers';
 import CareerDetail from './components/CareerDetail';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+library.add(fab);
 
 class App extends Component {
     constructor(props) {
@@ -60,14 +65,19 @@ class App extends Component {
                     <Switch>
                         {/* Should be home component for the first route once it gets finished */}
                         <Route exact path='/' component={Contact} />
-                        <Route path='/about' render={props => <About {...props} pages={this.state.pages} />} />
-                        <Route path='/services' render={props => <Services {...props} pages={this.state.pages} />} />
+                        <Route exact path='/about' render={props => <About {...props} pages={this.state.pages} />} />
+                        <Route
+                            exact
+                            path='/services'
+                            render={props => <Services {...props} pages={this.state.pages} />}
+                        />
                         <Route
                             exact
                             path='/careers/:careerId'
                             render={props => <CareerDetail {...props} careers={this.state.careers} />}
                         />
                         <Route
+                            exact
                             path='/careers'
                             render={props => (
                                 <Careers
@@ -78,9 +88,14 @@ class App extends Component {
                                 />
                             )}
                         />
-                        <Route path='/gallery' render={props => <Gallery {...props} media={this.state.media} />} />
-                        <Route path='/contact' component={Contact} />
+                        <Route
+                            exact
+                            path='/gallery'
+                            render={props => <Gallery {...props} media={this.state.media} />}
+                        />
+                        <Route exact path='/contact' component={Contact} />
                     </Switch>
+                    <Footer pages={this.state.pages} />
                 </div>
             );
         }
