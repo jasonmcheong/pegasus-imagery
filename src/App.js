@@ -17,10 +17,10 @@ import CareerDetail from './components/CareerDetail';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
-library.add(fab, faBars);
+library.add(fab, faBars, faAngleDoubleRight);
 
 class App extends Component {
     constructor(props) {
@@ -32,6 +32,7 @@ class App extends Component {
             career: [],
             categories: [],
             logo: [],
+            parallax: [],
             isLoading: false,
         };
     }
@@ -45,6 +46,7 @@ class App extends Component {
             fetch('http://pegasus.web.dmitcapstone.ca/wordpress/wp-json/wp/v2/career').then(res => res.json()),
             fetch('http://pegasus.web.dmitcapstone.ca/wordpress/wp-json/wp/v2/categories').then(res => res.json()),
             fetch('http://pegasus.web.dmitcapstone.ca/wordpress/wp-json/logo/v1').then(res => res.json()),
+            fetch('http://pegasus.web.dmitcapstone.ca/wordpress/wp-json/wp/v2/parallax').then(res => res.json()),
         ])
             .then(value => {
                 this.setState({
@@ -53,6 +55,7 @@ class App extends Component {
                     careers: value[2],
                     categories: value[3],
                     logo: value[4],
+                    parallax: value[5],
                     isLoading: false,
                 });
             })
@@ -69,7 +72,13 @@ class App extends Component {
                     <Header logo={this.state.logo} />
                     <Switch>
                         {/* Should be home component for the first route once it gets finished */}
-                        <Route exact path='/' component={Home} />
+                        <Route
+                            exact
+                            path='/'
+                            render={props => (
+                                <Home {...props} parallax={this.state.parallax} pages={this.state.pages} />
+                            )}
+                        />
                         <Route exact path='/about' render={props => <About {...props} pages={this.state.pages} />} />
                         <Route
                             exact
