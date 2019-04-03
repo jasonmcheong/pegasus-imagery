@@ -16,6 +16,7 @@ import Careers from './components/Careers';
 import CareerDetail from './components/CareerDetail';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Loading from './helper/Loading';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -65,7 +66,7 @@ class App extends Component {
     render() {
         const { isLoading } = this.state;
         if (isLoading) {
-            return <p>Loading...</p>;
+            return <Loading />;
         } else {
             return (
                 <div className='App'>
