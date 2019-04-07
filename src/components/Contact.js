@@ -71,58 +71,62 @@ class Contact extends React.Component {
 
     render() {
         return (
-            <form action='#' onSubmit={e => this.handleFormSubmit(e)}>
-                <h1 className='contact-title'>Contact Us</h1>
-                <div className='form-container'>
-                    <div className='form-group'>
+            <form action="#" onSubmit={e => this.handleFormSubmit(e)}>
+                <h1 className="contact-title">Contact Us</h1>
+                <div className="form-container">
+                    <div className="form-group">
                         <label>Inquiry Type</label>
                         <select
-                            id='inquiry'
-                            name='inquiry'
+                            id="inquiry"
+                            name="inquiry"
                             onChange={e => this.setState({ inquiry: e.target.value })}
                             value={this.state.inquiry}
                         >
-                            <option value='General'>General</option>
-                            <option value='Invest'>Invest</option>
-                            <option value='Services'>Services</option>
+                            <option value="General">General</option>
+                            <option value="Invest">Invest</option>
+                            <option value="Services">Services</option>
                         </select>
                     </div>
-                    <div className='form-group'>
-                        <label>Full Name</label>
+                    <div className="form-group">
+                        <label>
+                            Full Name <span className="required">*</span>
+                        </label>
                         <input
-                            type='text'
-                            id='name'
-                            name='name'
-                            placeholder='Full Name'
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Full Name"
                             onChange={e => this.setState({ name: e.target.value })}
                             value={this.state.name}
                             required
                         />
                     </div>
-                    <div className='form-group'>
+                    <div className="form-group">
                         <label>Company</label>
                         <input
-                            type='text'
-                            id='company'
-                            name='company'
-                            placeholder='Company'
+                            type="text"
+                            id="company"
+                            name="company"
+                            placeholder="Company"
                             onChange={e => this.setState({ company: e.target.value })}
                             value={this.state.company}
                         />
                     </div>
-                    <div className='form-group'>
-                        <label>Email</label>
+                    <div className="form-group">
+                        <label>
+                            Email <span className="required">*</span>
+                        </label>
                         <input
-                            type='email'
-                            id='email'
-                            name='email'
-                            placeholder='Email'
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Email"
                             onChange={e => this.setState({ email: e.target.value })}
                             value={this.state.email}
                             required
                         />
                     </div>
-                    <div className='form-group'>
+                    <div className="form-group">
                         <label>Phone</label>
                         <ReactPhoneInput
                             inputExtraProps={{ name: 'phone', id: 'phone' }}
@@ -133,21 +137,23 @@ class Contact extends React.Component {
                             value={this.state.phone}
                         />
                     </div>
-                    <div className='form-group'>
-                        <label>Message</label>
+                    <div className="form-group">
+                        <label>
+                            Message <span className="required">*</span>
+                        </label>
                         <textarea
-                            id='message'
-                            name='message'
-                            rows='10'
-                            placeholder='Write your message'
+                            id="message"
+                            name="message"
+                            rows="10"
+                            placeholder="Write your message"
                             onChange={e => this.setState({ message: e.target.value })}
                             value={this.state.message}
                             required
                         />
                     </div>
                     <div>{this.state.mailSent ? <div>Thank you for contcting us.</div> : ''}</div>
-                    <div className='submit-container'>
-                        <input type='submit' value='Submit' />
+                    <div className="submit-container">
+                        <input type="submit" value="Submit" />
                     </div>
                 </div>
             </form>

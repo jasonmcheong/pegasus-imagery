@@ -1,6 +1,5 @@
 /*
  *
- *   TODO: Find a different way to store images. Purchase ACF Pro ?
  *   TODO: Add clicking functionality to display bigger image
  *
  */
@@ -16,9 +15,13 @@ class Gallery extends React.Component {
         return (
             <div>
                 <h1>Gallery</h1>
-                {this.props.media.map(media => {
-                    return <img src={media.media_details.sizes.thumbnail.source_url} alt='' />;
-                })}
+                <div className="gallery-list">
+                    {this.props.gallery.map(image => {
+                        return image.acf.image_gallery.map(img => {
+                            return <img src={img.sizes.thumbnail} alt="" />;
+                        });
+                    })}
+                </div>
             </div>
         );
     }
