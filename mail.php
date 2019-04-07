@@ -12,7 +12,7 @@ if($_POST) {
 
 	http_response_code(200);
 	$subject = "New message received from Pegasus Imagery Website";
-	$to = "jasonmcheong@gmail.com";
+	$to = "info@pegasusimagery.ca";
 	$from = strip_tags($_POST['email']);
 
 	// data

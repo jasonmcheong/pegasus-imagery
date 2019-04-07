@@ -11,17 +11,17 @@ const CareerDetail = props => {
             {props.careers.map(career => {
                 if (career.id == props.match.params.careerId) {
                     return (
-                        <div className='full-job'>
+                        <div className="full-job">
                             <ul>
-                                <li className='back-btn-li'>
-                                    <Link className='back-btn' to='/careers'>
+                                <li className="back-btn-li">
+                                    <Link className="back-btn" to="/careers">
                                         Go Back
                                     </Link>
                                 </li>
                             </ul>
                             <h2>{career.title.rendered}</h2>
                             <div
-                                className='full-job-desc'
+                                className="full-job-desc"
                                 dangerouslySetInnerHTML={{ __html: career.acf.full_job_description }}
                             />
                         </div>
