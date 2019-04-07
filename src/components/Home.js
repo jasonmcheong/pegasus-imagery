@@ -13,6 +13,21 @@ const Home = props => {
                             if (home.title.rendered === 'Home') {
                                 return (
                                     <div>
+                                        <div
+                                            className="hero"
+                                            style={{
+                                                backgroundImage: `url(${home.acf.main_hero_image.url})`,
+                                                backgroundPosition: 'center bottom',
+                                                backgroundSize: 'cover',
+                                                backgroundRepeat: 'no-repeat',
+                                                height: '88vh',
+                                            }}
+                                        >
+                                            <div className="hero-inner">
+                                                <h1 style={{ fontSize: '3.3rem' }}>{home.acf.main_title}</h1>
+                                                <h2 style={{ fontSize: '1.4rem' }}>{home.acf.main_sub_title}</h2>
+                                            </div>
+                                        </div>
                                         <Parallax
                                             bgImage={para.acf.para_mission.url}
                                             contentClassName="background"
