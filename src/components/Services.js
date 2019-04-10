@@ -11,6 +11,13 @@ class Services extends React.Component {
             ${evt.video}
         `;
     }
+    changeClass(evt) {
+        let tabs = document.querySelector('.service-tabs').children;
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove('active');
+            evt.target.classList.add('active');
+        }
+    }
 
     render() {
         return (
@@ -19,7 +26,7 @@ class Services extends React.Component {
                 {this.props.pages.map(services => {
                     if (services.title.rendered === 'Services') {
                         return (
-                            <div>
+                            <div key="services">
                                 <div className="header">
                                     <div className="header-inner">
                                         <h1>{services.acf.heading}</h1>
@@ -28,7 +35,8 @@ class Services extends React.Component {
                                 </div>
                                 <div className="service-tabs">
                                     <div
-                                        onClick={evt =>
+                                        className="active"
+                                        onClick={evt => {
                                             this.handleClick(
                                                 {
                                                     title: services.acf.service_1_title,
@@ -36,8 +44,9 @@ class Services extends React.Component {
                                                     video: services.acf.service_1_video_link,
                                                 },
                                                 evt
-                                            )
-                                        }
+                                            );
+                                            this.changeClass(evt);
+                                        }}
                                     >
                                         <img
                                             src={services.acf.service_1_icon.url}
@@ -48,7 +57,7 @@ class Services extends React.Component {
                                         <h2>{services.acf.service_1_title}</h2>
                                     </div>
                                     <div
-                                        onClick={evt =>
+                                        onClick={evt => {
                                             this.handleClick(
                                                 {
                                                     title: services.acf.service_2_title,
@@ -56,8 +65,9 @@ class Services extends React.Component {
                                                     video: services.acf.service_2_video_link,
                                                 },
                                                 evt
-                                            )
-                                        }
+                                            );
+                                            this.changeClass(evt);
+                                        }}
                                     >
                                         <img
                                             src={services.acf.service_2_icon.url}
@@ -68,7 +78,7 @@ class Services extends React.Component {
                                         <h2>{services.acf.service_2_title}</h2>
                                     </div>
                                     <div
-                                        onClick={evt =>
+                                        onClick={evt => {
                                             this.handleClick(
                                                 {
                                                     title: services.acf.service_3_title,
@@ -76,8 +86,9 @@ class Services extends React.Component {
                                                     video: services.acf.service_3_video_link,
                                                 },
                                                 evt
-                                            )
-                                        }
+                                            );
+                                            this.changeClass(evt);
+                                        }}
                                     >
                                         <img
                                             src={services.acf.service_3_icon.url}

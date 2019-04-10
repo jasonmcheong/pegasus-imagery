@@ -9,7 +9,7 @@ const About = props => {
             {props.pages.map(about => {
                 if (about.title.rendered === 'About') {
                     return (
-                        <div>
+                        <div key="about">
                             <div className="header">
                                 <div className="header-inner">
                                     <h1>{about.acf.heading}</h1>

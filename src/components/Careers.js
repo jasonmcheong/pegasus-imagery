@@ -5,10 +5,6 @@ import ScrollToTop from '../helper/ScrollToTop';
 class Careers extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
-    }
-    handleClick(evt) {
-        console.log(evt.source_url);
     }
 
     render() {
@@ -18,7 +14,7 @@ class Careers extends React.Component {
                 {this.props.pages.map(page => {
                     if (page.title.rendered === 'Career') {
                         return (
-                            <div className="header">
+                            <div key="c1" className="header">
                                 <div className="header-inner">
                                     <h1>{page.acf.heading}</h1>
                                     <div

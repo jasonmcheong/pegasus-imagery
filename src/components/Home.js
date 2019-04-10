@@ -8,11 +8,11 @@ const Home = props => {
         <div>
             {props.parallax.map(para => {
                 return (
-                    <div>
+                    <div key="para">
                         {props.pages.map(home => {
                             if (home.title.rendered === 'Home') {
                                 return (
-                                    <div>
+                                    <div key="home">
                                         <div
                                             className="hero"
                                             style={{

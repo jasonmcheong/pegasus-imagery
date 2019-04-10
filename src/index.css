@@ -334,23 +334,58 @@ input[type='submit']:hover {
 /* 
 *   SERVICE PAGE STYLES
 */
+.service-tabs .active {
+    color: #679cd3;
+    background: #303030;
+}
+.service-tabs .active:after {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #303030;
+    content: ' ';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.service-tabs .active > img {
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
 .service-tabs {
     max-width: 1800px;
     margin: 0 auto;
     display: flex;
-    background: #eee;
+    background: #545454;
+    color: #fff;
 }
 .service-tabs div {
     width: 33.4%;
     padding: 30px 0;
+    position: relative;
+}
+.service-tabs div img,
+.service-tabs div h2 {
+    pointer-events: none;
+}
+.service-tabs div img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
 }
 .service-tabs * {
     text-align: center;
 }
 .service-tabs div:hover {
     cursor: pointer;
-    background: #679cd3;
-    transition: background 0.7s;
+    background: #303030;
+    color: #679cd3;
+    transition: all 0.7s;
+}
+.service-tabs div:hover > img {
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
 }
 #service-display {
     max-width: 1800px;
@@ -461,6 +496,14 @@ input[type='submit'] {
 /* 
 *   GALLERY PAGE STYLES
 */
+.gallery-container {
+    background: #232323;
+    color: #fff;
+    margin: 0 auto;
+}
+.gallery-container h1 {
+    text-align: center;
+}
 .gallery-section {
     max-width: 1800px;
     margin: 0 auto;
@@ -584,6 +627,9 @@ footer {
         grid-gap: 40px;
     }
     /* SERVICES */
+    .service-tabs {
+        margin-bottom: 1.5rem;
+    }
     #service-display div:nth-child(1) {
         padding: 150px 50px;
     }
@@ -699,6 +745,9 @@ footer {
         width: 30%;
     }
     /* SERVICES */
+    .service-tabs h2 {
+        font-size: 1.1rem;
+    }
     #service-display {
         flex-direction: column;
         align-items: center;
@@ -777,14 +826,7 @@ footer {
     }
     /* SERVICES */
     .service-tabs div {
-        padding: 30px;
-    }
-    .service-tabs div > h2 {
-        display: none;
-    }
-    .service-tabs div > img {
-        width: 40px;
-        height: 40px;
+        padding: 25px;
     }
     #service-display div:nth-child(1) {
         padding: 20px;
