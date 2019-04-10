@@ -22,7 +22,7 @@ const About = props => {
                             <div className="about-company-section">
                                 <div className="about-company-flex">
                                     <div className="about-company-info">
-                                        <h3>{about.acf.about_company_title}</h3>
+                                        <h2>{about.acf.about_company_title}</h2>
                                         <div
                                             className="text"
                                             dangerouslySetInnerHTML={{
