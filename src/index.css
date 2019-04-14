@@ -674,7 +674,7 @@ footer {
     }
     .main-nav.hide {
         height: 7.8rem;
-        transition: all 0.9s ease-out;
+        transition: all 1s ease-out;
     }
     .nav {
         display: flex;
