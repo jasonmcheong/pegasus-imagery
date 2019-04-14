@@ -3,41 +3,54 @@ import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const hideClass = () => {
-    document.getElementById('nav-items').classList.toggle('hide');
     document.getElementById('main-nav').classList.toggle('hide');
+    document.getElementById('nav-items').classList.toggle('hide');
+    document.querySelectorAll('.nav-items li').forEach(el => {
+        el.classList.toggle('hide');
+    });
 };
 
 const Header = props => {
     return (
-        <nav className='main-nav hide' id='main-nav'>
-            <div className='nav'>
-                <div className='logo-container'>
-                    <Link to='/'>
-                        <img src={props.logo} alt='Pegasus Imagery Logo' className='logo' />
+        <nav className="main-nav hide" id="main-nav">
+            <div className="nav">
+                <div className="logo-container">
+                    <Link to="/">
+                        <img src={props.logo} alt="Pegasus Imagery Logo" className="logo" />
                     </Link>
 
-                    <FontAwesomeIcon icon={'bars'} className='bar' onClick={hideClass} />
+                    <FontAwesomeIcon icon={'bars'} className="bar" onClick={hideClass} />
                 </div>
-                <ul className='nav-items hide' id='nav-items'>
-                    <li>
-                        <NavLink exact to='/'>
+                <ul className="nav-items hide" id="nav-items">
+                    <li className="hide">
+                        <NavLink exact to="/" onClick={hideClass}>
                             Home
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/about'>About</NavLink>
+                    <li className="hide">
+                        <NavLink to="/about" onClick={hideClass}>
+                            About
+                        </NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/services'>Services</NavLink>
+                    <li className="hide">
+                        <NavLink to="/services" onClick={hideClass}>
+                            Services
+                        </NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/careers'>Careers</NavLink>
+                    <li className="hide">
+                        <NavLink to="/careers" onClick={hideClass}>
+                            Careers
+                        </NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/gallery'>Gallery</NavLink>
+                    <li className="hide">
+                        <NavLink to="/gallery" onClick={hideClass}>
+                            Gallery
+                        </NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/contact'>Contact</NavLink>
+                    <li className="hide">
+                        <NavLink to="/contact" onClick={hideClass}>
+                            Contact
+                        </NavLink>
                     </li>
                 </ul>
             </div>
