@@ -674,6 +674,7 @@ footer {
     }
     .main-nav.hide {
         height: 7.8rem;
+        overflow: hidden;
         transition: all 1s ease-out;
     }
     .nav {

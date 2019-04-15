@@ -1,9 +1,3 @@
-/*
- *
- *   TODO: Before transfering build > index.html to server. Make sure that the file paths are correct ie. /static/ to static/
- *
- */
-
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
