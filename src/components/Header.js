@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const hideClass = () => {
+    document.getElementById('bar').classList.toggle('close');
     document.getElementById('main-nav').classList.toggle('hide');
     document.getElementById('nav-items').classList.toggle('hide');
     document.querySelectorAll('.nav-items li').forEach(el => {
@@ -19,7 +20,11 @@ const Header = props => {
                         <img src={props.logo} alt="Pegasus Imagery Logo" className="logo" />
                     </Link>
 
-                    <FontAwesomeIcon icon={'bars'} className="bar" onClick={hideClass} />
+                    <div className="bar" id="bar" onClick={hideClass}>
+                        <div className="bar-line" />
+                        <div className="bar-line" />
+                        <div className="bar-line" />
+                    </div>
                 </div>
                 <ul className="nav-items hide" id="nav-items">
                     <li className="hide">
