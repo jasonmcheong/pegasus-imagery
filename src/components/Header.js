@@ -27,32 +27,32 @@ const Header = props => {
                 </div>
                 <ul className="nav-items hide" id="nav-items">
                     <li className="hide">
-                        <NavLink exact to="/" onClick={hideClass}>
+                        <NavLink exact to="/pegasus" onClick={hideClass}>
                             Home
                         </NavLink>
                     </li>
                     <li className="hide">
-                        <NavLink to="/about" onClick={hideClass}>
+                        <NavLink to="/pegasus/about" onClick={hideClass}>
                             About
                         </NavLink>
                     </li>
                     <li className="hide">
-                        <NavLink to="/services" onClick={hideClass}>
+                        <NavLink to="/pegasus/services" onClick={hideClass}>
                             Services
                         </NavLink>
                     </li>
                     <li className="hide">
-                        <NavLink to="/careers" onClick={hideClass}>
+                        <NavLink to="/pegasus/careers" onClick={hideClass}>
                             Careers
                         </NavLink>
                     </li>
                     <li className="hide">
-                        <NavLink to="/gallery" onClick={hideClass}>
+                        <NavLink to="/pegasus/gallery" onClick={hideClass}>
                             Gallery
                         </NavLink>
                     </li>
                     <li className="hide">
-                        <NavLink to="/contact" onClick={hideClass}>
+                        <NavLink to="/pegasus/contact" onClick={hideClass}>
                             Contact
                         </NavLink>
                     </li>
