@@ -14,7 +14,7 @@ const CareerDetail = props => {
                         <div className="full-job">
                             <ul>
                                 <li className="back-btn-li">
-                                    <Link className="back-btn" to="/careers">
+                                    <Link className="back-btn" to="/pegasus/careers">
                                         Go Back
                                     </Link>
                                 </li>

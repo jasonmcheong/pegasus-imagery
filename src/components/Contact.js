@@ -1,10 +1,3 @@
-/*
- *
- *  TODO: Change the receiving email address when ready for deployment
- *  TODO: Add reCaptcha to the form for added verification security
- *
- */
-
 import React from 'react';
 import ReactPhoneInput from 'react-phone-input-2';
 import axios from 'axios';

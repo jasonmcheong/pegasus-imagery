@@ -37,7 +37,7 @@ const Home = props => {
                                                 <div className="section-content">
                                                     <h2>{home.acf.para_mission_title}</h2>
                                                     <p>{home.acf.para_mission_desc}</p>
-                                                    <Link className="homepage-link" to="/about">
+                                                    <Link className="homepage-link" to="/pegasus/about">
                                                         Our Mission{' '}
                                                         <FontAwesomeIcon
                                                             style={{ paddingTop: '1px' }}
@@ -62,7 +62,7 @@ const Home = props => {
                                                 <div className="section-content">
                                                     <h2>{home.acf.para_aircraft_title}</h2>
                                                     <p>{home.acf.para_aircraft_desc}</p>
-                                                    <Link className="homepage-link" to="/about">
+                                                    <Link className="homepage-link" to="/pegasus/about">
                                                         Our Aircraft{' '}
                                                         <FontAwesomeIcon
                                                             style={{ paddingTop: '1px' }}
@@ -81,7 +81,7 @@ const Home = props => {
                                                 <div className="section-content">
                                                     <h2>{home.acf.para_services_title}</h2>
                                                     <p>{home.acf.para_services_desc}</p>
-                                                    <Link className="homepage-link" to="/services">
+                                                    <Link className="homepage-link" to="/pegasus/services">
                                                         Our Services{' '}
                                                         <FontAwesomeIcon
                                                             style={{ paddingTop: '1px' }}
@@ -106,7 +106,7 @@ const Home = props => {
                                                 <div className="section-content">
                                                     <h2>{home.acf.para_careers_title}</h2>
                                                     <p>{home.acf.para_careers_desc}</p>
-                                                    <Link className="homepage-link" to="/careers">
+                                                    <Link className="homepage-link" to="/pegasus/careers">
                                                         Our Careers{' '}
                                                         <FontAwesomeIcon
                                                             style={{ paddingTop: '1px' }}

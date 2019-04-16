@@ -1,9 +1,3 @@
-/*
- *
- *   TODO: Add clicking functionality to display bigger image
- *
- */
-
 import React from 'react';
 
 class Gallery extends React.Component {

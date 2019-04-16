@@ -29,7 +29,7 @@ const About = props => {
                                                 __html: about.acf.about_company_description,
                                             }}
                                         />
-                                        <Link className="about-btn" to="/services">
+                                        <Link className="about-btn" to="/pegasus/services">
                                             Our Services
                                         </Link>
                                     </div>
