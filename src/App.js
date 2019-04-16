@@ -12,10 +12,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Loading from './helper/Loading';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
-library.add(fab, faBars, faAngleDoubleRight);
+library.add(fab, faAngleDoubleRight);
 
 class App extends Component {
     constructor(props) {
