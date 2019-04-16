@@ -105,7 +105,7 @@ class App extends Component {
                             path="/pegasus/gallery"
                             render={props => <Gallery {...props} gallery={this.state.gallery} />}
                         />
-                        <Route exact path="/contact" component={Contact} />
+                        <Route exact path="/pegasus/contact" component={Contact} />
                     </Switch>
                     <Footer pages={this.state.pages} />
                 </div>
