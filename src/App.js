@@ -36,12 +36,12 @@ class App extends Component {
         this.setState({ isLoading: true });
 
         Promise.all([
-            fetch('http://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/gallery').then(res => res.json()),
-            fetch('http://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/pages').then(res => res.json()),
-            fetch('http://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/career').then(res => res.json()),
-            fetch('http://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/categories').then(res => res.json()),
-            fetch('http://jasonmcheong.com/wp-pegasus/wp-json/logo/v1').then(res => res.json()),
-            fetch('http://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/parallax').then(res => res.json()),
+            fetch('https://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/gallery').then(res => res.json()),
+            fetch('https://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/pages').then(res => res.json()),
+            fetch('https://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/career').then(res => res.json()),
+            fetch('https://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/categories').then(res => res.json()),
+            fetch('https://jasonmcheong.com/wp-pegasus/wp-json/logo/v1').then(res => res.json()),
+            fetch('https://jasonmcheong.com/wp-pegasus/wp-json/wp/v2/parallax').then(res => res.json()),
         ])
             .then(value => {
                 this.setState({
